@@ -1,23 +1,17 @@
 import '../styles/app.css'
 
 import { AppProps } from 'next/app'
-import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
 export default function app({ Component, pageProps }: AppProps) {
-    let pageTitle = process.env.NEXT_PUBLIC_APP_TITLE
-
-    if (pageProps.title) pageTitle = (pageProps.title).concat(' - ').concat(pageTitle)
+    pageProps.appTitle = 'Datasintesa App'
 
     return (
-        <>
-            <Head children={<title>{pageTitle}</title>} />
-            <div className='container max-w-screen-md mx-auto'>
-                <Header appTitle={process.env.NEXT_PUBLIC_APP_TITLE} />
-                <Component {...pageProps} />
-                <Footer companyName={process.env.NEXT_PUBLIC_COMPANY_NAME} />
-            </div>
-        </>
+        <div className='container max-w-screen-md mx-auto'>
+            <Header appTitle={pageProps.appTitle} />
+            <Component {...pageProps} />
+            <Footer companyName='PT Datasintesa Teknologi Nusantara' />
+        </div>
     )
 }
