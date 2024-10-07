@@ -7,7 +7,7 @@ export default function upload({ appTitle }) {
     const fileUpload = (event: React.FormEvent) => {
         event.preventDefault()
 
-        document.querySelector(event.submitter).disabled = true
+        event.currentTarget.querySelector('button').disabled = true
         
         const formData = new FormData(event.currentTarget as HTMLFormElement)
 
@@ -29,7 +29,7 @@ export default function upload({ appTitle }) {
                         } else {
                             setError(value.message)
                         }
-                        document.querySelector(event.submitter).disabled = false
+                        event.currentTarget.querySelector('button').disabled = false
                     }
                 )
             }
