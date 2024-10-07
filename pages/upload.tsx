@@ -29,6 +29,7 @@ export default function upload({ appTitle }) {
                         } else {
                             setError(value.message)
                         }
+                        document.querySelector(event.submitter).disabled = false
                     }
                 )
             }
