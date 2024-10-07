@@ -11,6 +11,8 @@ export default function upload({ appTitle }) {
         const btn = event.currentTarget.getElementsByTagName('button').item(0)
         btn.disabled = true
 
+        event.currentTarget.querySelector('button').disabled = true
+        
         const formData = new FormData(event.currentTarget as HTMLFormElement)
 
         fetch(
@@ -34,6 +36,7 @@ export default function upload({ appTitle }) {
                             if (Array.isArray(value.message)) value.message = value.message.join(', ')
                             setError(value.message)
                         }
+                        event.currentTarget.querySelector('button').disabled = false
                     }
                 )
             }
