@@ -67,7 +67,7 @@ export default function page({ appTitle }) {
 
     return (
         <>
-            <Head children={<title>{`${appTitle}`}</title>} />
+            <Head children={<title>{appTitle}</title>} />
             <main className='px-2 mb-12'>
                 {
                     Boolean(error) && (

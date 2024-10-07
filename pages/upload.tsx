@@ -35,7 +35,7 @@ export default function upload({ appTitle }) {
 
     return (
         <>
-            <Head children={<title>{`${appTitle}`}</title>} />
+            <Head children={<title>Upload - {appTitle}</title>} />
             <main className='px-2 mb-64'>
                 <div className='mb-10'>
                     <h1 className='text-xl font-semibold'>Upload Page</h1>
@@ -49,7 +49,7 @@ export default function upload({ appTitle }) {
                 }
                 <div className='mb-4'>
                     <form className='text-center' onSubmit={fileUpload}>
-                        <input className='w-1/3 border-2 rounded bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 focus:outline-none' name='file' accept='text/csv' type='file' />
+                        <input className='w-64 max-w-full border-2 rounded bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 focus:outline-none' name='file' accept='text/csv' type='file' />
                         <br />
                         <button className='bg-blue-500 hover:bg-blue-700 border text-white text-xl my-10 py-2 px-4 rounded' type='submit'>
                             Submit
@@ -59,12 +59,4 @@ export default function upload({ appTitle }) {
             </main>
         </>
     )
-}
-
-export function getStaticProps() {
-    return {
-        props: {
-            title: 'Upload'
-        }
-    }
 }
